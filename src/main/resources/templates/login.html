@@ -86,7 +86,7 @@
             success: function (data) {
                 layer.closeAll();
                 if (data.code == 200) {
-                    layer.msg("成功");
+                    layer.msg("Login Success");
                     console.log(data);
                     document.cookie = "userTicket=" + data.object;
                     window.location.href = "/goods/toList";
