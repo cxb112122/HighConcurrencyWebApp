@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Deatils</title>
+    <!-- jquery -->
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap/css/bootstrap.min.css}"/>
+    <script type="text/javascript" th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+    <!-- layer -->
+    <script type="text/javascript" th:src="@{/layer/layer.js}"></script>
+    <!-- common.js -->
+    <script type="text/javascript" th:src="@{/js/common.js}"></script>
+</head>
+<body>
+<div class="panel panel-default">
+        <div class="panel-heading">Product Description</div>
+    <div class="panel-body">
+        <span th:if="${user eq null}"> Please Login<br/></span>
+        <span>No Shipping Address</span>
+    </div>
+    <table class="table" id="goods">
+        <tr>
+            <td>Name</td>
+            <td colspan="3" th:text="${goods.goodsName}"></td>
+        </tr>
+        <tr>
+            <td>Image</td>
+            <td colspan="3"><img th:src="@{${goods.goodsImg}}" width="200" height="200"/></td>
+        </tr>
+        <tr>
+            <td>Start Time</td>
+            <td th:text="${#dates.format(goods.startDate,'yyyy-MM-dd HH:mm:ss')}"></td>
+            <td id="seckillTip">
+                <span th:if="${secKillStatus eq 0}">Flash Sale Count Down:
+                    <span id="countDown" th:text="${remainSeconds}"></span>Sec
+                </span>
+                <span th:if="${secKillStatus eq 1}">Flash Sale Ongoing</span>
+                <span th:if="${secKillStatus eq 2}">Flash Sale Ended</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td>Original Price</td>
+            <td colspan="3" th:text="${goods.goodsPrice}"></td>
+        </tr>
+        <tr>
+            <td>Flash Sale Price</td>
+            <td colspan="3" th:text="${goods.seckillPrice}"></td>
+        </tr>
+        <tr>
+            <td>Stock</td>
+            <td colspan="3" th:text="${goods.stockCount}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+<script>
+
+
+
+</script>
+</html>
