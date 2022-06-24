@@ -7,8 +7,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/seckill?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
-    username: myuser
-    password: myuser
+    username: root
+    password: root
     hikari:
       pool-name: DateHikariCP
       minimum-idle: 5
